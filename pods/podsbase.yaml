@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podsbase
+  labels:
+    app: podsbase
+spec:
+  containers:
+    - name: podsbase
+      image: nginx:latest # pod made of one container
+      args: # we pass two arguements as they start up
+        - "-http=0.0.0.0:80"
+        - "-health=0.0.0.0:81"
+        - "-secret=secret"
+      ports: # we open up port 80 for HTTP traffic and 81 for health checks
+        - name: http
+          containerPort: 80
+        - name: health
+          containerPort: 81
+      resources:
+        limits:
+          cpu: 0.2
+          memory: "10Mi"

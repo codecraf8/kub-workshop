@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "servicebase"
+spec:
+  selector: # used to automatically find and expose any pods with the labels
+    app: "servicebase"
+    secure: "enabled"
+  ports:
+    - protocol: "TCP"
+      port: 443
+      targetPort: 443 # nginx on 443
+      nodePort: 31000 # external traffic from
+  type: NodePort

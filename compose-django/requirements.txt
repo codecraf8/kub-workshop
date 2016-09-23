@@ -1,0 +1,18 @@
+django==1.8
+
+# Configuration
+django-configurations==0.8
+django-secure==1.0
+django-cache-url==0.8.0
+dj-database-url==0.3.0
+
+psycopg2==2.5.4
+
+# Unicode slugification
+unicode-slugify==0.1.1
+django-autoslug==1.7.2
+
+# Useful things
+django-avatar==2.0
+
+gunicorn==19.1.1
